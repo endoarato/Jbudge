@@ -8,11 +8,13 @@ public class User {
     private UUID id;
     private String name;
     private ArrayList<Account> accounts;
+    private ArrayList<Transaction> transactions;
 
     public User(String name) {
         this.id = UUID.randomUUID();
         setName(name);
         setAccounts(new ArrayList<Account>());
+        setTransactions(new ArrayList<Transaction>());
     }
 
     public User() {
@@ -49,6 +51,24 @@ public class User {
 
     public void deleteAccount() {
         //TODO: to be implemented
+        assert false : "Not yet implemented";
+    }
+
+    public ArrayList<Transaction> getTransactions() {
+        return this.transactions;
+    }
+
+    public void setTransactions(ArrayList<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public void addTransaction(Transaction transaction) {
+        this.transactions.add(transaction);
+    }
+
+    public void deleteTransaaction() {
+        //TODO: to be implemented
+        assert false : "Not yet implemented";
     }
 
     @Override
@@ -63,6 +83,12 @@ public class User {
             output += "----------------------\n";
             output += account.toString();
             output += "----------------------\n";
+        }
+        output += "Transactions:\n";
+        for (Transaction transaction : transactions) {
+            output += "-----------------------\n";
+            output += transaction.toString();
+            output += "-----------------------\n";
         }
         output += "\n==========================\n";
         return output;

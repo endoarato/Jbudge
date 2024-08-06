@@ -25,7 +25,7 @@ public class CashAccount extends Account {
     }
 
     public CashAccount(String name, String number) {
-        this(name, number, 0.0,, 0.0);
+        this(name, number, 0.0, 0.0);
     }
 
     public CashAccount(String name) {

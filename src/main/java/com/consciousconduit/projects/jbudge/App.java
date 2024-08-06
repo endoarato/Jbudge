@@ -12,8 +12,15 @@ public class App {
     public static void main(String[] args) {
         ArrayList<User> users = new ArrayList<User>();
         User user = new User("JHK");
-        CashAccount ca = new CashAccount("Chase Checking", "1234", 100.0);
+        CashAccount ca = new CashAccount("Chase Checking", "1234", 0.0);
         user.addAccount(ca);
+        Transaction transaction = new Transaction(
+            "Initial transfer",
+            100.0,
+            null,
+            ca.getId()
+        );
+        user.addTransaction(transaction);
         users.add(user);
         printUsers(users);
 
