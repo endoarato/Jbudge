@@ -19,11 +19,15 @@ public abstract class Account {
     }
 
     public Account() {
-        this.id = UUID.randomUUID();
+        this("");
     }
 
     public UUID getId() {
         return this.id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public void setName(String name) {
@@ -40,5 +44,15 @@ public abstract class Account {
 
     public String getNumber() {
         return this.number;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "Account\nID: %s\nName: %s\nNumber: %s\n",
+            this.id,
+            this.name,
+            this.number
+        );
     }
 }

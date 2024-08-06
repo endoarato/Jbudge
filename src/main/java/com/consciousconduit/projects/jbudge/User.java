@@ -12,7 +12,15 @@ public class User {
     public User(String name) {
         this.id = UUID.randomUUID();
         setName(name);
-        setAccounts(accounts);
+        setAccounts(new ArrayList<Account>());
+    }
+
+    public User() {
+        this("");
+    }
+
+    public void setUUID(UUID id) {
+        this.id = id;
     }
 
     public UUID getId() {
@@ -41,5 +49,22 @@ public class User {
 
     public void deleteAccount() {
         //TODO: to be implemented
+    }
+
+    @Override
+    public String toString() {
+        String output = String.format(
+            "=============================\nUser\nID: %s\nName: %s\n",
+            this.id,
+            this.name
+        );
+        output += "Accounts:\n";
+        for (Account account : accounts) {
+            output += "----------------------\n";
+            output += account.toString();
+            output += "----------------------\n";
+        }
+        output += "\n==========================\n";
+        return output;
     }
 }
