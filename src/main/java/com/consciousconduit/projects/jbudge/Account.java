@@ -15,7 +15,11 @@ public abstract class Account {
     }
 
     public Account(String name) {
-        Account(name, "");
+        this(name, "");
+    }
+
+    public Account() {
+        this.id = UUID.randomUUID();
     }
 
     public UUID getId() {

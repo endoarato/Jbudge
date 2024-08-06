@@ -17,19 +17,19 @@ public class CashAccount extends Account {
     }
 
     public CashAccount(String name, String number, double balance) {
-        CashAccount(name, number, balance, 0);
+        this(name, number, balance, 0.0);
     }
 
     public CashAccount(String name, double balance) {
-        CashAccount(name, "", balance, 0);
+        this(name, "", balance, 0.0);
     }
 
     public CashAccount(String name, String number) {
-        CashAccount(name, number, 0, 0);
+        this(name, number, 0.0, 0.0);
     }
 
     public CashAccount(String name) {
-        CashAccount(name, "", 0, 0);
+        this(name, "", 0.0, 0.0);
     }
 
     public void setBalance(double balance) {
